@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/home"
+            android:title="Home" />
+
+        <item android:id="@+id/dadJoke"
+            android:title="DadJoke" />
+
+        <item android:id="@+id/exit"
+            android:title="Exit" />
+
+
+    </group>
+
+    <item android:id="@+id/item1"
+        android:title="Lipstick"
+        android:icon="@drawable/lipstick"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/item2"
+        android:title="Coffee"
+        android:orderInCategory="50"
+        android:icon="@drawable/coffee_cups"
+        app:showAsAction="always"/>
+
+</menu>
