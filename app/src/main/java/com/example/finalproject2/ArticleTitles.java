@@ -1,17 +1,26 @@
 package com.example.finalproject2;
 
-
-import java.sql.Date;
-import java.text.DateFormat;
-
+/**
+ * Article titles.
+ */
 public class ArticleTitles {
 
+    public Long id;
     public String title;
     public String section;
     public String url;
 
-    public ArticleTitles(String title, String section, String url) {
+    /**
+     * Constructor.
+     *
+     * @param id
+     * @param title
+     * @param section
+     * @param url
+     */
+    public ArticleTitles(Long id, String title, String section, String url) {
 
+        this.id = id;
         this.title = title;
         this.section = section;
         this.url = url;

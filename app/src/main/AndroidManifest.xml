@@ -26,7 +26,7 @@
             android:name=".ArticleTitles"
             android:exported="false" />
         <activity
-            android:name=".DadJoke"
+            android:name=".Favourites"
             android:exported="false" />
         <activity
             android:name=".BaseActivity"
