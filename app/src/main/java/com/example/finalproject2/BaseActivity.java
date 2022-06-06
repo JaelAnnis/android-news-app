@@ -80,7 +80,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
             // If the favourites option is selected.
             case R.id.favourites:
-                Toast.makeText(getApplicationContext(), "You clicked on favourites", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.clickedOnFavourites), Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;

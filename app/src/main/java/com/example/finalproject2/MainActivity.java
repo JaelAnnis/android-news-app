@@ -2,6 +2,8 @@ package com.example.finalproject2;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -33,8 +35,20 @@ public class MainActivity extends BaseActivity {
     // Initialize the progress bar.
     ProgressBar progressBar;
 
+    // Initialize the SharedPreferences.
+    SharedPreferences sharedPreferences;
+
+    // Initialize the article count.
+    String articleCount;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Get the shared preferences.
+        sharedPreferences = getSharedPreferences("Preferences",MODE_PRIVATE);
+
+        // Get the article count preference.
+        articleCount = sharedPreferences.getString("articleCount", "10");
 
         // Set the view.
         setContentView(R.layout.activity_main);
@@ -59,16 +73,49 @@ public class MainActivity extends BaseActivity {
 
                 // Output the help instructions.
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.setTitle("Instructions")
+                alertDialogBuilder.setTitle(getResources().getString(R.string.Instructions))
 
-                        .setMessage("Click the article of your choice to view more information on each article. Click the url on the article information page to view the article. Click add to favourites to add it to your Favourites. Click Favourites on the main page to view your favourite articles.")
+                        .setMessage(getResources().getString(R.string.instructionDetails))
 
                         .create().show();
 
             // If the second item was clicked.
             } else if (pos == 1) {
 
-                // Load the favourties view.
+                // Output the preferences.
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder.setTitle(getResources().getString(R.string.articleCountPreferences))
+
+                        .setMessage(getResources().getString(R.string.preferenceInstructions))
+
+                        // If the 5 button is clicked.
+                        .setPositiveButton("5", (click, arg) -> {
+
+                            // Initialize a SharedPreference Editor.
+                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+                            // Save the article count preference.
+                            myEdit.putString("articleCount", "5");
+                            myEdit.commit();
+                        })
+
+                        // If the 10 button is clicked.
+                        .setNegativeButton("10", (click, arg) -> {
+
+                            // Initialize a SharedPreference Editor.
+                            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+                            // Save the article count preference.
+                            myEdit.putString("articleCount", "10");
+                            myEdit.commit();
+                        })
+
+                        .create().show();
+
+            // If the third item was clicked.
+            } else if (pos == 2) {
+
+                // Load the favourites view.
                 Intent nextActivity = new Intent(MainActivity.this, Favourites.class);
                 startActivity(nextActivity);
 
@@ -161,20 +208,29 @@ public class MainActivity extends BaseActivity {
         /**
          * On post execute.
          *
+         * READ NOTE FOR WORKAROUND BELOW:
+         *
+         * This is the section that will be the workaround since the toolbar/menu
+         * and navigation drawer do not work. You can access the Help, Preferences, and Favourites
+         * using the top list items designated for the views instead.
+         *
          * @param fromDoInBackground
          */
         public void onPostExecute(JSONArray fromDoInBackground) {
 
             // Add the help button.
-            listItems.add(new ArticleTitles(-1L,"Help", "", ""));
+            listItems.add(new ArticleTitles(-1L,getResources().getString(R.string.Help), "", ""));
+
+            // Add the preferences button.
+            listItems.add(new ArticleTitles(-1L,getResources().getString(R.string.Preferences), "", ""));
 
             // Add the favourite button.
-            listItems.add(new ArticleTitles(-1L,"Favourites", "", ""));
+            listItems.add(new ArticleTitles(-1L,getResources().getString(R.string.Favourites), "", ""));
 
             try {
 
                 // Iterate through the articles.
-                for (int i = 0; i < articles.length(); i++) {
+                for (int i = 0; i < Integer.parseInt(articleCount); i++) {
 
                     // Get the article information.
                     String title = articles.getJSONObject(i).getString("webTitle");

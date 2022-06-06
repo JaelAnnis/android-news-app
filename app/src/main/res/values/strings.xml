@@ -1,22 +1,36 @@
 <resources>
-    //MainActivity
+    //Menu
     <string name="app_name">Final Project</string>
-    <string name="urgentSwitch">Urgent</string>
-    <string name="addButton">Add</string>
-    <string name="typeHereText">Type Here</string>
-    <string name="lipstick">Item1</string>
-    <string name="coffee">Item2</string>
-    <string name="search">Search</string>
+    <string name="Home">Home</string>
+    <string name="Exit">Exit</string>
+    <string name="menuFavourites">Favourites</string>
 
-    //Toggle
 
+    //Menu Workaround
+
+    <string name="Help">Help</string>
+    <string name="Instructions">Instructions</string>
+    <string name="instructionDetails">Click the article of your choice to view more information on each article. Click the url on the article information page to view the article. Click add to favourites to add it to your Favourites. Click Favourites on the main page to view your favourite articles. Long click on each favourite article to delete.</string>
+
+    <string name="Preferences">Preferences</string>
+    <string name="articleCountPreferences">Item Count Preferences</string>
+    <string name="preferenceInstructions">This will change the number of items listed on the front screen.</string>
+
+    <string name="Favourites">Favourites</string>
+    <string name="clickedOnFavourites">You clicked on Favourites</string>
+
+
+
+    //Favourites
+
+    <string name="addToFavourites">Add to Favourites</string>
+
+    //Navigation Drawer
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
 
-    //Dad Joke
-
-    <string name="textView">I am afraid for the calendar. Its days are numbered</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title" />
+    //Detail Fragment
+    <string name="Title">Title:</string>
+    <string name="Section">Section:</string>
+    <string name="Url">URL:</string>
 </resources>

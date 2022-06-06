@@ -1,0 +1,36 @@
+<resources>
+    //Menu
+    <string name="app_name">Final Project</string>
+    <string name="Home">Domicile</string>
+    <string name="Exit">Sortir</string>
+    <string name="menuFavourites">Favoris</string>
+
+
+    //Menu Workaround
+    <string name="Help">aider</string>
+    <string name="Instructions">Des instructions</string>
+    <string name="instructionDetails">Cliquez sur l\'article de votre choix pour afficher plus d\'informations sur chaque article. Cliquez sur l\'URL de la page d\'informations sur l\'article pour afficher l\'article. Cliquez sur ajouter aux favoris pour l\'ajouter à vos favoris. Cliquez sur Favoris sur la page principale pour afficher vos articles préférés.</string>
+
+    <string name="Preferences">préférences</string>
+    <string name="articleCountPreferences">Préférences de nombre d\'articles</string>
+    <string name="preferenceInstructions">Cela modifiera le nombre d\'articles répertoriés sur l\'écran avant.</string>
+
+    <string name="Favourites">Favoris</string>
+    <string name="clickedOnFavourites">Vous avez cliqué sur Favoris</string>
+
+
+
+    //Favourites
+
+    <string name="addToFavourites">Ajouter aux Favoris</string>
+
+    //Navigation Drawer
+    <string name="navigation_drawer_open">Ouvre</string>
+    <string name="navigation_drawer_close">Fermir</string>
+
+    //Detail Fragment
+    <string name="Title">Titre:</string>
+    <string name="Section">Section:</string>
+    <string name="Url">URL:</string>
+
+</resources>

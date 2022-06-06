@@ -5,17 +5,17 @@
     <group android:checkableBehavior="single">
 
         <item android:id="@+id/home"
-            android:title="Home" />
+            android:title="@string/Home" />
 
 
         <item android:id="@+id/exit"
-            android:title="Exit" />
+            android:title="@string/Exit" />
 
 
     </group>
 
     <item android:id="@+id/favourites"
-        android:title="Favourites"
+        android:title="@string/Favourites"
         android:icon="@drawable/pink_heart"
         android:orderInCategory="100"
         app:showAsAction="always"/>
